@@ -3,7 +3,6 @@
 from random import random
 from random import sample
 from random import uniform
-from diffevo import de_simple
 
 def sphere(x):
     total=0
