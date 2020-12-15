@@ -4,6 +4,9 @@
 from __future__ import division
 import random
 import math
+import timeit
+
+start = timeit.default_timer()
 
 #--- COST FUNCTION ------------------------------------------------------------+
 
@@ -106,8 +109,12 @@ if __name__ == "__PSO__":
 
 #--- RUN ----------------------------------------------------------------------+
 
-initial=[50,50]               # initial starting location [x1,x2...]
-bounds=[(-10,10),(-10,10)]  # input bounds [(x1_min,x1_max),(x2_min,x2_max)...]
+initial=[50,50,50,30,70]               # initial starting location [x1,x2...]
+bounds=[(-10,10),(-10,10),(-10,10),(-10,10),(-10,10)]  # input bounds [(x1_min,x1_max),(x2_min,x2_max)...]
 PSO(func1,initial,bounds,num_particles=10,maxiter=20)
+
+stop = timeit.default_timer()
+
+print('Time: ', stop - start)  
 
 #--- END ----------------------------------------------------------------------+
