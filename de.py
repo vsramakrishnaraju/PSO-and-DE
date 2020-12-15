@@ -3,6 +3,11 @@
 from random import random
 from random import sample
 from random import uniform
+from diffevo import de_simple
+import timeit
+
+start = timeit.default_timer()
+
 
 def sphere(x):
     total=0
@@ -116,11 +121,13 @@ def minimize(cost_func, bounds, popsize, mutate, recombination, maxiter):
 
 #--- CONSTANTS ----------------------------------------------------------------+
 
-# https://github.com/nathanrooy/differential-evolution-optimization referance 
-
 bounds = [(-10,10),(-10,10)]    
 popsize = 10        
-mutate = 0.5         
-recombination = 0.7       
+mutate = 0.5        
+recombination = 0.7      
 maxiter = 20            
 minimize(sphere, bounds, popsize, mutate, recombination, maxiter)
+
+stop = timeit.default_timer()
+
+print('Time: ', stop - start)  
